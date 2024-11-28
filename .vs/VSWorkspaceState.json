@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components\\login",
+    "\\src\\app\\helpers",
+    "\\src\\assets\\css"
+  ],
+  "SelectedNode": "\\src\\app\\helpers\\validateform.ts",
+  "PreviewInSolutionExplorer": false
+}
