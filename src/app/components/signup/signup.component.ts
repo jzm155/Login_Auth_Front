@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import ValidateForm from '../../helpers/validateform';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +16,9 @@ export class SignupComponent implements OnInit {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash"
   signUpForm!: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private auth: AuthService,
+              private router: Router) {
 
   }
 
@@ -24,7 +28,9 @@ export class SignupComponent implements OnInit {
       lastname: ['', Validators.required],
       email: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      token: ['string'],
+      role: ['User'],
     });
   }
 
@@ -36,7 +42,17 @@ export class SignupComponent implements OnInit {
 
   onSignUp() {
     if (this.signUpForm.valid) {
-
+      this.auth.signUp(this.signUpForm.value)
+        .subscribe({
+          next: (res => {
+            alert(res.message)
+            this.signUpForm.reset();
+            this.router.navigate(['login']);
+          })
+          , error: (err => {
+            alert(err?.error.message)
+          })
+        })
     }
     else {
       ValidateForm.validateAllFormFields(this.signUpForm)

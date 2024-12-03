@@ -3,10 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\components",
     "\\src\\app\\components\\login",
+    "\\src\\app\\components\\signup",
     "\\src\\app\\helpers",
-    "\\src\\assets\\css"
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\helpers\\validateform.ts",
   "PreviewInSolutionExplorer": false
 }
