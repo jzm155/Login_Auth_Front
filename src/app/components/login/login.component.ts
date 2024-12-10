@@ -48,10 +48,11 @@ export class LoginComponent implements OnInit
 
   onLogin() {
     if (this.loginForm.valid) {
-      this.auth.login(this.loginForm.value)
+      this.auth.signIn(this.loginForm.value)
         .subscribe({
           next: (res) => {
             this.loginForm.reset();
+            this.auth.storeToken(res.token)
             this.toast.success(res.message, "SUCCESS", 5000)
             this.router.navigate(['dashboard'])
           },
