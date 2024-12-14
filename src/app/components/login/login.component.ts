@@ -4,6 +4,7 @@ import ValidateForm from '../../helpers/validateform';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { UserStoreService } from '../../services/user-store.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit
   constructor(private fb: FormBuilder,
               private auth: AuthService,
               private router: Router,
-              private toast: NgToastService
+              private toast: NgToastService,
+              private userStore: UserStoreService
   )
   {
 
@@ -53,6 +55,9 @@ export class LoginComponent implements OnInit
           next: (res) => {
             this.loginForm.reset();
             this.auth.storeToken(res.token)
+            const tokenPayload = this.auth.decodedToken();
+            this.userStore.setFullNameForStore(tokenPayload.name)
+            this.userStore.setRoleForStore(tokenPayload.role)
             this.toast.success(res.message, "SUCCESS", 5000)
             this.router.navigate(['dashboard'])
           },
