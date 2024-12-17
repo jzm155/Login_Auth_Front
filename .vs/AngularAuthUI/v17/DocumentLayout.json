@@ -54,8 +54,7 @@
               "RelativeToolTip": "src\\app\\services\\user-store.service.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-12T18:25:05.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T18:25:05.612Z"
             },
             {
               "$type": "Document",
@@ -65,7 +64,7 @@
               "RelativeDocumentMoniker": "src\\app\\components\\login\\login.component.ts",
               "ToolTip": "D:\\Projetos\\Login_Auth\\Front\\AngularAuthUI\\src\\app\\components\\login\\login.component.ts",
               "RelativeToolTip": "src\\app\\components\\login\\login.component.ts",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDsAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-12-10T20:37:58.246Z",
               "EditorCaption": ""
@@ -128,8 +127,7 @@
               "RelativeToolTip": "src\\app\\components\\dashboard\\dashboard.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-09T21:53:59.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T21:53:59.344Z"
             },
             {
               "$type": "Document",
@@ -141,8 +139,7 @@
               "RelativeToolTip": "src\\app\\components\\dashboard\\dashboard.component.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-12-09T21:47:40.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T21:47:40.694Z"
             }
           ]
         }
