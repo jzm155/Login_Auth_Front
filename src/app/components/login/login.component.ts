@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { UserStoreService } from '../../services/user-store.service';
+import { ResetPasswordService } from '../../services/reset-password.service';
 
 @Component({
   selector: 'app-login',
@@ -19,11 +20,14 @@ export class LoginComponent implements OnInit
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
+  resetPasswordEmail!: string;
+  isValidEmail!: boolean
   constructor(private fb: FormBuilder,
               private auth: AuthService,
               private router: Router,
               private toast: NgToastService,
-              private userStore: UserStoreService
+              private userStore: UserStoreService,
+              private resetService: ResetPasswordService
   )
   {
 
@@ -69,6 +73,33 @@ export class LoginComponent implements OnInit
     }
     else {
       ValidateForm.validateAllFormFields(this.loginForm)
+    }
+  }
+
+  checkValidEmail(event: string) {
+    const value = event;
+    const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;
+    this.isValidEmail = pattern.test(value);
+    return this.isValidEmail;
+  }
+
+  confirmToSend() {
+    if (this.checkValidEmail(this.resetPasswordEmail)) {
+      this.resetService.sendResetPasswordLink(this.resetPasswordEmail)
+        .subscribe({
+          next: (res) => {
+            this.toast.success(res.message, "SUCCESS", 5000)
+            this.resetPasswordEmail = "";
+            const buttonRef = document.getElementById("closeBtn")
+            buttonRef?.click();
+          },
+          error: (err) => {
+            this.toast.danger("Something when wrong!", "ERROR", 5000)
+          }
+        })
+
+
+      
     }
   }
 }

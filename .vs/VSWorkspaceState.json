@@ -4,8 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\reset",
+    "\\src\\app\\components\\signup",
+    "\\src\\app\\helpers",
     "\\src\\app\\interceptors",
+    "\\src\\app\\models",
     "\\src\\app\\services"
   ],
+  "SelectedNode": "\\src\\app\\components\\reset\\reset.component.html",
   "PreviewInSolutionExplorer": false
 }
